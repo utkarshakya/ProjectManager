@@ -1,0 +1,36 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vite": "vite ./client --host",
+    "tailwind": "npx @tailwindcss/cli -i ./client/src/styles/input.css -o ./client/src/styles/output.css --watch",
+    "client": "concurrently --names \"VITE,TAILWIND\" --prefix-colors \"red,blue\" \"npm run vite\" \"npm run tailwind\"",
+    "server": "nodemon ./server/index.js",
+    "dev": "concurrently --names \"VITE,TAILWIND,NODEMON\" --prefix-colors \"red,blue,green\" \"npm run vite\" \"npm run tailwind\" \"npm run server\" --kill-others",
+    "build": "vite build ./client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.5.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.4",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^4.1.4",
+    "vite": "^6.3.3"
+  }
+}
