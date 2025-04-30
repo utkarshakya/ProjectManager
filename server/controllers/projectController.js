@@ -1,4 +1,4 @@
-import Project from "../models/ProjectModel";
+import Project from "../models/ProjectModel.js";
 
 export const createProject = (req, res) => {
   const { title } = req.body;

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { credentials } from "../config/env";
+import { credentials } from "../config/env.js";
 
 export const authoriseUser = (req, res, next) => {
   const token = req.header("Authorization")?.split(" ")[1];

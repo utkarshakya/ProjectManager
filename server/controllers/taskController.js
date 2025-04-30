@@ -1,5 +1,5 @@
-import Project from "../models/ProjectModel";
-import Task from "../models/TaskModel";
+import Project from "../models/ProjectModel.js";
+import Task from "../models/TaskModel.js";
 
 export const createTask = async (req, res) => {
   const { title, description } = req.body;

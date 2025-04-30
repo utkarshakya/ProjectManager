@@ -1,8 +1,8 @@
-import User from "../models/UserModel";
+import User from "../models/UserModel.js";
 import bcrypt from "bcryptjs";
-import { getJwtToken } from "../utils/functions";
+import { getJwtToken } from "../utils/functions.js";
 
-export const registrationController = async (req, res) => {
+export const register = async (req, res) => {
   const { name, email, password, country } = req.body;
   try {
     const isExist = await User.findOne({ email });
@@ -28,7 +28,7 @@ export const registrationController = async (req, res) => {
   }
 };
 
-export const loginController = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
