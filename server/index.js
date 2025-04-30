@@ -1,12 +1,31 @@
 import express from "express";
-import { config } from "./config/env.js";
+import { credentials } from "./config/env.js";
+import authRoute from "./routes/authRoute.js";
+import { connectMongoDb } from "./config/db.js";
+
 const app = express();
-const PORT = config.port || 5000;
 
-app.get('/', (req, res) => {
-    res.send('Hello from backend!');
+// Middlewares
+app.use(express.json());
+
+// API Routes
+app.use("/api/auth", authRoute);
+
+
+
+app.get("/", (req, res) => {
+  res.send("Hello from backend!");
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+(async () => {
+  try {
+    const PORT = credentials.port;
+    await connectMongoDb();
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error("Something went wrong", err);
+    process.exit(1);
+  }
+})();
