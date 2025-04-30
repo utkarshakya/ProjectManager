@@ -10,7 +10,7 @@ const taskSchema = new mongoose.Schema(
       default: "Todo",
     },
     completedAt: { type: Date },
-    project: {
+    projectId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Project",
       require: true,
