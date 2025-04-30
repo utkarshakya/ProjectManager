@@ -24,14 +24,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-lg">
+    <nav className="bg-slate-900 max-w-7xl mx-auto sticky top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left section - Logo*/}
           <Link to="/" className="flex-shrink-0">
-            <span className="md:text-xl font-semibold text-blue-600 dark:text-blue-400">
+            <span className="md:text-xl font-semibold text-blue-400">
               Task{" "}
-              <span className="bg-slate-800 text-white dark:bg-white dark:text-black rounded-md px-2 py-1">
+              <span className="bg-white text-black rounded-md px-2 py-1">
                 Manager
               </span>
             </span>
@@ -43,7 +43,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+                className="px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-blue-400"
               >
                 {link.name}
               </Link>
