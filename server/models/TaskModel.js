@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const taskSchema = new mongoose.Schema(
   {
     title: { type: String, require: true },
-    description: { type: String, require: true },
+    description: { type: String, default: "" },
     status: {
       type: String,
       enum: ["Todo", "In Progress", "Done"],

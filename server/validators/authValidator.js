@@ -12,3 +12,14 @@ export const registerValidation = [
   body(password).trim().isStrongPassword().withMessage("Use a Strong Password"),
   body(country).trim().notEmpty().withMessage("Country is required"),
 ];
+
+export const loginValidation = [
+  body(email)
+    .trim()
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("Invalid Email")
+    .normalizeEmail(),
+  body(password).trim().notEmpty().withMessage("Password is required"),
+];
