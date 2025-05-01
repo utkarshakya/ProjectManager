@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import axios from "../api/axois";
+import axios from "../api/axios.js";
 import {
   EnvelopeIcon,
   LockClosedIcon,
