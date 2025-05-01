@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema(
   {
-    title: { type: String, require: true },
-    description: { type: String, default: "" },
+    title: { type: String, require: true, minLength: 1, maxLength: 100 },
+    description: { type: String, default: "", maxLength: 2000 },
     status: {
       type: String,
       enum: ["Todo", "In Progress", "Done"],
