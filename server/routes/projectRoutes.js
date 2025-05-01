@@ -6,12 +6,26 @@ import {
   getProject,
   updateProject,
 } from "../controllers/projectController.js";
+import { projectValidator } from "../validators/projectValidator.js";
+import { verifyValidationResult } from "../validators/verifyValidationResult.js";
 
 const router = express.Router();
 
 router.get("/", verifyToken, getProject);
-router.post("/", verifyToken, createProject);
-router.put("/:projectId", verifyToken, updateProject);
+router.post(
+  "/",
+  verifyToken,
+  projectValidator,
+  verifyValidationResult,
+  createProject
+);
+router.put(
+  "/:projectId",
+  verifyToken,
+  projectValidator,
+  verifyValidationResult,
+  updateProject
+);
 router.delete("/:projectId", verifyToken, deleteProject);
 
 export default router;

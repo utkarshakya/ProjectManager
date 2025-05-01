@@ -1,6 +1,6 @@
 import { body } from "express-validator";
 
-export const registerValidation = [
+export const registrationValidator = [
   body(name).trim().notEmpty().withMessage("Name is required"),
   body(email)
     .trim()
@@ -13,7 +13,7 @@ export const registerValidation = [
   body(country).trim().notEmpty().withMessage("Country is required"),
 ];
 
-export const loginValidation = [
+export const loginValidator = [
   body(email)
     .trim()
     .notEmpty()

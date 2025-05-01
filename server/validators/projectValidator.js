@@ -1,6 +1,6 @@
 import { body } from "express-validator";
 
-export const createProjectValidator = [
+export const projectValidator = [
   body("title")
     .trim()
     .notEmpty().withMessage("Project title is required")
