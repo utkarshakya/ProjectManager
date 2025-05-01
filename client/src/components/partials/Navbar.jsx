@@ -29,11 +29,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Left section - Logo*/}
           <Link to="/" className="flex-shrink-0">
-            <span className="md:text-xl font-semibold text-blue-400">
-              Task{" "}
-              <span className="bg-white text-black rounded-md px-2 py-1">
-                Manager
-              </span>
+            <span className="md:text-xl font-semibold text-blue-400 hover:animate-pulse">
+              Project Manager
             </span>
           </Link>
 
@@ -54,7 +51,7 @@ const Navbar = () => {
           <div className="hidden md:flex md:items-center md:space-x-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-200"
+              className="p-2 rounded-lg hover:bg-gray-700 text-gray-200"
             >
               {isDarkTheme ? (
                 <SunIcon className="h-6 w-6" />
@@ -64,7 +61,7 @@ const Navbar = () => {
             </button>
             <Link
               to="/profile"
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-200"
+              className="p-2 rounded-lg hover:bg-gray-700 text-gray-200"
             >
               <UserIcon className="h-6 w-6" />
             </Link>
