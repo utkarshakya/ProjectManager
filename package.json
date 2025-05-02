@@ -11,7 +11,7 @@
     "server": "nodemon ./server/index.js",
     "dev": "concurrently --names \"VITE,TAILWIND,NODEMON\" --prefix-colors \"red,blue,green\" \"npm run vite\" \"npm run tailwind\" \"npm run server\" --kill-others",
     "build": "vite build ./client",
-    "remote": "node ./server"
+    "start": "node ./server"
   },
   "keywords": [],
   "author": "",
