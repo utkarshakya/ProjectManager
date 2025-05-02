@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { credentials } from "./config/env.js";
 import { connectMongoDb } from "./config/db.js";
-import { authRoutes, projectRoutes, taskRoutes } from "./routes";
+import { authRoutes, projectRoutes, taskRoutes } from "./routes/index.js";
 import path from "path";
 import { fileURLToPath } from "url";
 

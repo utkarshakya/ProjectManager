@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, useParams } from "react-router";
 import {
   Home,
+  About,
   Register,
   Login,
   Dashboard,
@@ -17,7 +18,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route index element={<Home />} />
-        {/* <Route path="about" element={<About />} /> */}
+        <Route path="about" element={<About />} />
         <Route element={<GuestRoute />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
