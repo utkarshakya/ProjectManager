@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { FolderIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { Header, Footer } from "../components";
+import { Task } from "./";
 import axios from "../api/axios.js";
 
 const Dashboard = () => {
@@ -30,7 +31,7 @@ const Dashboard = () => {
 
         setProjects(data.projects);
       } catch (err) {
-        setError(err.response?.data?.error || "Failed to load projects");
+        setError(err.response?.data?.message || "Failed to load projects");
       } finally {
         setLoading(false);
       }
@@ -72,9 +73,13 @@ const Dashboard = () => {
           <div className="space-y-4">
             {projects.length !== 0 &&
               projects.map((project) => (
-                <div
+                <Link
                   key={project._id}
-                  className="bg-gray-800 rounded-lg p-6 shadow-lg hover:bg-gray-700 transition-colors"
+                  to={`/tasks/${project._id}`}
+                  className="inline-block w-full bg-gray-800 rounded-lg p-6 shadow-lg hover:bg-gray-700 transition-colors"
+                  onClick={() => 
+                    <Task projectId={project._id} />
+                  }
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -100,7 +105,7 @@ const Dashboard = () => {
                       </button>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
 
             {projects.length === 0 && (

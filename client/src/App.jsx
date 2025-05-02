@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route, useParams } from "react-router";
 import {
   Home,
   Register,
@@ -8,6 +8,7 @@ import {
   NotFound,
   Profile,
   ProjectForm,
+  Task,
 } from "./pages";
 import { GuestRoute, ProtectedRoute } from "./components";
 
@@ -26,6 +27,7 @@ export default function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/project/create" element={<ProjectForm />} />
+          <Route path="/tasks/:projectId" element={<Task />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
 

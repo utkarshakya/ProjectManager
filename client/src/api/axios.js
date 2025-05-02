@@ -22,7 +22,6 @@ axiosInstance.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
       window.location.href = '/login'; // Full page redirect
-      toast.error('Session expired. Please login again.');
     }
     return Promise.reject(error);
   }

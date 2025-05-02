@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 import { Header, Footer } from "../components/";
+import axios from "../api/axios.js"
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -14,11 +15,11 @@ const Login = () => {
 
     try {
       const { data } = await axios.post("/auth/login", formData);
-
+      console.log(data);
       localStorage.setItem("token", data.token);
       navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.error || "Login failed");
+      setError(err.response?.data?.message || "Login failed");
     }
   };
 

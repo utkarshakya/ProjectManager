@@ -30,9 +30,9 @@ export const getTask = async (req, res) => {
       return res.status(404).json({ message: "Project Not Found" });
     }
 
-    const tasks = await Task.find({ projectId });
+    const tasks = await Task.find({ projectId }).populate("projectId", "title");
 
-    res.status(400).json({ tasks });
+    res.status(200).json({ tasks });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

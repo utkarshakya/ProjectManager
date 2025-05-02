@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
+import React, { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router";
 
 const GuestRoute = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const GuestRoute = () => {
     }
   }, [token, navigate]);
 
-  return !token ? children : null;
+  return !token ? <Outlet/> : null;
 };
 
 export default GuestRoute;

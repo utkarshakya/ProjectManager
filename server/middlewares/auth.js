@@ -18,6 +18,9 @@ export const verifyToken = (req, res, next) => {
     next(); // Proceed to the next middleware or route handler
   } catch (error) {
     // Handle errors such as invalid or expired tokens
+    if (error.name === "TokenExpiredError") {
+      return res.status(401).json({ message: "Token Expired" });
+    }
     res.status(500).json({ message: error.message });
   }
 };

@@ -20,6 +20,7 @@ export const createTaskValidator = [
 
 export const updateTaskValidator = [
   body("title")
+    .optional()
     .trim()
     .notEmpty()
     .withMessage("Task title is required")
