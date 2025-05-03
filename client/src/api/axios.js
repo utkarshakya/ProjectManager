@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const devURL = 'http://localhost:5000/api';
+// Uncomment this while developing
+// const devURL = 'http://localhost:5000/api';
 
 const axiosInstance = axios.create({
   baseURL: `${devURL ? devURL : "/api"}`,
