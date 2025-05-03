@@ -37,7 +37,7 @@ const Register = () => {
     }
 
     try {
-      const { data } = await axios.post("/auth/register", formData);
+      const { data } = await axios.post("/user/register", formData);
 
       // Store token and redirect
       localStorage.setItem("token", data.token);

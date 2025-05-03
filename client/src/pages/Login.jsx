@@ -14,7 +14,7 @@ const Login = () => {
     setError("");
 
     try {
-      const { data } = await axios.post("/auth/login", formData);
+      const { data } = await axios.post("/user/login", formData);
       console.log(data);
       localStorage.setItem("token", data.token);
       navigate("/dashboard");

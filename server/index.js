@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { credentials } from "./config/env.js";
 import { connectMongoDb } from "./config/db.js";
-import { authRoutes, projectRoutes, taskRoutes } from "./routes/index.js";
+import { userRoutes, projectRoutes, taskRoutes } from "./routes/index.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -18,7 +18,7 @@ if (credentials.devMode) {
 app.use(express.json());
 
 // API Routes
-app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/tasks", taskRoutes);
 
@@ -28,7 +28,7 @@ if (!credentials.devMode) {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
   });
 } else {
-  app.get("/", (req, res) => {
+  app.get("", (req, res) => {
     res.send("Hello from Project Manager backend!");
   });
 }

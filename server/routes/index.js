@@ -1,5 +1,5 @@
-import authRoutes from "./authRoutes.js";
+import userRoutes from "./userRoutes.js";
 import projectRoutes from "./projectRoutes.js";
 import taskRoutes from "./taskRoutes.js";
 
-export { authRoutes, projectRoutes, taskRoutes };
+export { userRoutes, projectRoutes, taskRoutes };

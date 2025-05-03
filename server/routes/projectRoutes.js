@@ -1,5 +1,5 @@
 import express from "express";
-import { verifyToken } from "../middlewares/auth.js";
+import { authenticateUser } from "../middlewares/authenticateUser.js";
 import {
   createProject,
   deleteProject,
@@ -11,21 +11,21 @@ import { verifyValidationResult } from "../validators/verifyValidationResult.js"
 
 const router = express.Router();
 
-router.get("/", verifyToken, getProject);
+router.get("/", authenticateUser, getProject);
 router.post(
   "/",
-  verifyToken,
+  authenticateUser,
   projectValidator,
   verifyValidationResult,
   createProject
 );
 router.put(
   "/:projectId",
-  verifyToken,
+  authenticateUser,
   projectValidator,
   verifyValidationResult,
   updateProject
 );
-router.delete("/:projectId", verifyToken, deleteProject);
+router.delete("/:projectId", authenticateUser, deleteProject);
 
 export default router;
