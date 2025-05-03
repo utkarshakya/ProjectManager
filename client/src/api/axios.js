@@ -1,10 +1,10 @@
 import axios from "axios";
 
-// Uncomment this while developing
-// const devURL = 'http://localhost:5000/api';
+// Make it true when you are developing
+const areYouDeveloping = false;
 
 const axiosInstance = axios.create({
-  baseURL: `${devURL ? devURL : "/api"}`,
+  baseURL: `${areYouDeveloping ? "http://localhost:5000/api" : "/api"}`,
   headers: {
     "Content-Type": "application/json",
   },
