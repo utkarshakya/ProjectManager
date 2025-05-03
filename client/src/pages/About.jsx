@@ -8,8 +8,6 @@ const About = () => {
     <>
     <Header></Header>
     <main className="max-w-7xl min-h-screen bg-gray-200 dark:bg-gray-800/50 flex flex-col gap-20 justify-center items-center mx-auto">
-    
-    {/* <main className="min-h-screen bg-gray-900 text-gray-300 p-8"> */}
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-8">About Task Manager</h1>
         

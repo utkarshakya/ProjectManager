@@ -27,11 +27,9 @@ export const registrationValidator = [
 export const loginValidator = [
   body("email")
     .trim()
-    .notEmpty()
-    .withMessage("Email is required")
-    .isEmail()
-    .withMessage("Invalid Email")
-    .normalizeEmail(),
+    .normalizeEmail()
+    .notEmpty().withMessage("Email is required")
+    .isEmail().withMessage("Invalid Email"),
   body("password").trim().notEmpty().withMessage("Password is required"),
 ];
 
